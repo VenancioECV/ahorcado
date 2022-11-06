@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ahorcados</title>
+        <link rel ="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="juego">    
+            <h1 id="tituloinicio">Jahuga la ahorcado</h1>
+            <div id="espacioDeInicio">
+                <button type ="button" id="botonDeInicio">Jahugami</button>
+            </div>
+            <div id ="espacioDeJuego">            
+                <input type="text" id="rpDelJugador" aria-label="cajadejuego"/>
+                <button type="button" id="botonDeProbar">Probar mi letra</button>
+                <p>Introducí una letra y dale al botón pa Probar</p>
+                <div id="div1">
+                    <p id="mensajeError">Esa letra no va o ya está presente jsjs</p>
+                </div>
+                <p id="cantDeOpor"></p>
+            </div>
+            <pre id="imagen"></pre>
+            <div id="espacioDePerdida">
+                <p>Perdistes</p>
+                <p id="final"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</html>
