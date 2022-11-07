@@ -4,7 +4,7 @@ const PROBAR = document.getElementById('botonDeProbar');
 const REINICIAR = document.getElementById('botonDeReinicio');
 const ESPACIODEINICIO = document.getElementById('espacioDeInicio');
 const ESPACIODEJUEGO = document.getElementById('espacioDeJuego');
-const ESPACIODEPERDIDA = document.getElementById('espacioDePerdida');
+const ESPACIODEFINAL = document.getElementById('espacioDeFinal');
 const MENSAJEERROR = document.getElementById('mensajeError');
 const CANTDEOPOR = document.getElementById('cantDeOpor');
 const imagenAMostrar = document.getElementById('imagen');
@@ -65,7 +65,7 @@ palabrafinal=PALABRAS[i];
 palabra = PALABRAS[i].split('');
 imagenAMostrar.innerText=IMAGENES[0];    
 ESPACIODEJUEGO.style.display = 'none';
-ESPACIODEPERDIDA.style.display = 'none';
+ESPACIODEFINAL.style.display = 'none';
 imagenAMostrar.style.display='none';
 MENSAJEERROR.style.display = 'none';
 console.log(IMAGENES[i]);
@@ -101,8 +101,9 @@ PROBAR.addEventListener('click',()=>{
                     if(oportunidades == 0){
                         ESPACIODEJUEGO.style.display = 'none';  
                         imagenAMostrar.style.display = 'block'; 
-                        ESPACIODEPERDIDA.style.display ='block';
-                        document.getElementById('final').innerText="La palabra era "+palabrafinal;
+                        ESPACIODEFINAL.style.display ='block';
+                        document.getElementById('final').innerText=`Perdistes
+                        La palabra era ${palabrafinal}`;
                     }
                 }                               
         }            
@@ -113,7 +114,10 @@ PROBAR.addEventListener('click',()=>{
             k++;
         }
         if(k===palabra.length){
-            console.log("Terminao");
+            document.getElementById('final').innerText=`La palabra es ${palabrafinal}.  ¡Felicidades! :D`;
+            ESPACIODEJUEGO.style.display = 'none';  
+            imagenAMostrar.style.display = 'none'; 
+            ESPACIODEFINAL.style.display ='block';
         }
     } 
     document.getElementById('rpDelJugador').focus();
